@@ -804,27 +804,6 @@ def mergeMp3(segPath, output):
         lst.append(f1)
         print(f1)
     mp3mute.mp3merge(lst, output)
-
-def backupAll(picPath, scriptName, back):
-    print(__file__)
-    lst1= getFileList(picPath, '.jpg')
-    lst2= getFileList(picPath, '.jfif')
-    lst3= getFileList(picPath, '.png')
-    f1= os.path.join(r'D:\2020综合\技术使用\语音生成', 'TTS.py')
-    f2= os.path.join(r'D:\2020综合\技术使用\pythonTools', 'filetool.py')
-    f3= (__file__)
-    f4= os.path.join(os.path.dirname(__file__), 'effect.py')
-    f5= scriptName
-    f6= os.path.join(r'D:\2020综合\技术使用\视频改大小并组合', 'vedioCombine.py')
-    f7= os.path.join(r'D:\2020综合\视频制作\技术', 'mp3mute.py')
-    print(f5)
-    lst= list(lst1)+ list(lst2)+ list(lst3)+ [f1, f2, f3, f4, f5, f6]
-    if not os.path.exists(back):
-        os.makedirs(back)
-    for file in lst:
-        toFile= os.path.join(back, getFileName(file))
-        print(toFile)
-        shutil.copyfile(file, toFile)
         
 if __name__ == '__main__':
     inter= 20
