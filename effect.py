@@ -54,3 +54,4 @@ if __name__=='__main__':
     r, g, b, a= img.split()
     im2.paste(img, (0,0), mask=a)
     im2.save('round1.png')
+    

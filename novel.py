@@ -6,11 +6,6 @@
 # 因为视频连接的时候会导致音频错位
 # 增加从横屏图片一键生成抖音模式竖屏的功能
 import sys
-sys.path.append(r'D:\2020综合\技术使用\智能接口')
-sys.path.append(r'D:\2020综合\技术使用\pythonTools')
-sys.path.append(r'D:\2020综合\技术使用\视频处理')
-sys.path.append(r'D:\2020综合\技术使用\音频处理')
-sys.path.append(r'D:\2020综合\技术使用\图片处理')
 
 import os
 import shutil
@@ -503,7 +498,7 @@ def makeKeyFrame(movie, picPath, framePath):
     for frame in movie['list']:
         print(frame)
         partId= int(frame['part'])
-        if partId> maxPart:
+        if partId> 1000:
             break
         time= int(frame['time'])
         actor= frame.get('actor')
@@ -832,54 +827,13 @@ def backupAll(picPath, scriptName, back):
         shutil.copyfile(file, toFile)
         
 if __name__ == '__main__':
-    # 所有默认参数，都可以在剧本中设置
-    # 视频大小
-    # width= 1280
-    # height= 720
-    # 每秒帧数
     inter= 20
     # 默认输出文件名
     gOutFile= 'out.mp4'
-    maxPart= 1126
     # 项目根路径
-    base= r'D:\2020综合\视频制作\真话国'
-    pic= r'D:\2020综合\视频制作\素材\truth'
+    base= r'.'
+    pic= r'.\truth'
     script= os.path.join(base, '剧本_答案_分析.txt')
     makeNovel(base, pic, script)
-    # scriptFile= os.path.join(basePath, '剧本_答案.txt')
-    # 最终mp4文件名
-    base= r'D:\2020综合\视频制作\测试'
-    pic= r'D:\2020综合\视频制作\素材\truth'
-    script= os.path.join(base, '剧本.txt')
-    # makeNovel(base, pic, script)
-    str1= r'D:\2020综合\视频制作\喝啤酒\Frame\all'
-    str2= r'D:\2020综合\视频制作\喝啤酒\Frame\frame2'
-    str3= r'D:\2020综合\视频制作\喝啤酒\out4.mp4'
-    str4= r'D:\2020综合\视频制作\喝啤酒\out2.mp3'
-    str5= r'D:\2020综合\视频制作\喝啤酒\out5.mp4'
-    str6= r'D:\2020综合\视频制作\喝啤酒\out6.mp4'
-    # frameVertical(str1, str2, '《谁喝啤酒》')
-    # makeVertical(base)
+
     # makeVertical(base, '《谁喝啤酒》')
-    # 
-    # changeName(str1, str2)
-    # pyffmepg.makeMp4(str2, 'frame', str3, 20)
-    # pyffmepg.combineMp3(str3, str4, str5)
-    # pyffmepg.combineSrcipt(str5, '_combine.srt', str6)
-
-    # makeVertical(str1, str2)
-    # scriptAllMp4()
-    # mergeMp3(str1, str2)
-    # linkMp4Graduate(str1, tl, str2, 20)
-    # linkMp4(str1, tl, str2)
-    # txt= 
-    # text2mp3(txt, tofile, actor['voice'], actor['speed'], actor['tone'])
-
-    # 将全部内容做备份(包括剧本、图片素材与代码)
-    backPath= os.path.join(r'D:\2020综合\将来也许\以前项目\系列视频', 'classQuiz')
-    # backupAll(base, script, backPath)
-    str1= 'text:《来杯啤酒》,fontsize=75,pos=title,layer=t1'
-    str1= 'up,init=00,blink=True'
-    # a= readCmd(str1)
-    a= readParm(str1, parmDefine['defobj'], parmDefault['defobj'])
-    print(a)  # v7版本，行数763

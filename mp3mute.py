@@ -5,7 +5,7 @@ from pydub import AudioSegment
 import time
 
 
-muteName= r'D:\2020综合\视频制作\技术\bgm\bgm.mp3'
+muteName= r'bgm.mp3'
 
 def getMute(time, outMp3):
     # print('mute %d'%time)
@@ -52,13 +52,4 @@ def mp3merge(mp3list, output):
     print(len(song1))
     #导出音频文件
     song1.export(output, format="mp3") #导出为MP3格式
-
-if __name__=="__main__":
-    str3= r'D:\2020综合\视频制作\智力题\音频\part18.mp3'
-    # getMute(1000, str2)
-    str1= r'D:\2020综合\视频制作\智力题\音频\part04.mp3'
-    # changeBitRate(str1, str1)
-    str2= r'D:\2020综合\视频制作\智力题\音频\part06.mp3'
-    mp3overlay(str1, str2, str3)
-    # changeBitRate(str1, str1)
 

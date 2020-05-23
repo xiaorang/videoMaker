@@ -85,5 +85,5 @@ def makeSubPath(base, sub):
         os.makedirs(ret)
     return ret
 
-if __name__=='__main__':
-    clearDir(r'D:\2020综合\Now\视频制作\frame')
+
+
